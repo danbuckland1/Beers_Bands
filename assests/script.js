@@ -1,3 +1,6 @@
+
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+
 var config = {
     apiKey: "AIzaSyA34rCupaiOnfXRKBhsmgYsTc6Brp9ysew",
     authDomain: "beers-and-bands-rev-1.firebaseapp.com",
@@ -9,3 +12,11 @@ var config = {
   firebase.initializeApp(config);
 
   var dataRef = firebase.database();
+
+  var queryURL = 'http://beermapping.com/webservice/locquery/API_KEY/'
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    dataType: "xml",
+  }).then(function(response) {
