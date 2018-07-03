@@ -13,10 +13,16 @@ var config = {
 
   var dataRef = firebase.database();
 
-  var queryURL = 'http://beermapping.com/webservice/locquery/API_KEY/'
+  var queryURL = 'http://beermapping.com/webservice/locquery/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
 
   $.ajax({
-    url: queryURL,
-    method: "GET",
-    dataType: "xml",
+   url: queryURL,
+   method: "GET",
+   // dataType: "xml",
   }).then(function(response) {
+  console.log(response);
+  });
+   
+
+
+   
