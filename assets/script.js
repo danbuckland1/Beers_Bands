@@ -11,12 +11,23 @@ var config = {
   };
   firebase.initializeApp(config);
 
+
+
+
+  
   var dataRef = firebase.database();
 
-  var queryURL = 'http://beermapping.com/webservice/locquery/API_KEY/'
+  var queryURL1 = 'http://beermapping.com/webservice/locquery/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
+  var queryURL2 = 'https://www.bandsintown.com/webservice/locquery/1f631e0138387b85bc49eb32aa23ea48/'
 
   $.ajax({
-    url: queryURL,
+    url: queryURL1,
     method: "GET",
     dataType: "xml",
-  }).then(function(response) {
+  }).then(function(response) {});
+
+  $.ajax({
+    url: queryURL2,
+    method: "GET",
+    dataType: "xml",
+  }).then(function(response) {});
