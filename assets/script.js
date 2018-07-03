@@ -17,6 +17,9 @@ var config = {
   
   var dataRef = firebase.database();
 
+
+   
+
   var queryURL1 = 'http://beermapping.com/webservice/locquery/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
   var queryURL2 = 'https://www.bandsintown.com/webservice/locquery/1f631e0138387b85bc49eb32aa23ea48/'
 
