@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 var config = {
     apiKey: "AIzaSyA34rCupaiOnfXRKBhsmgYsTc6Brp9ysew",
     authDomain: "beers-and-bands-rev-1.firebaseapp.com",
@@ -11,11 +13,23 @@ var config = {
 
 
 
-var artist = $('locationInput').val();
+//  var artist = $('#locationInput').val();
   
   var dataRef = firebase.database();
-// var artist = "Drake";
+ //var artist = "Drake";
 // var location = "New+York"
+// console.log(artist);
+
+$('#letsRock').on("click", function(event) {
+  //   // prevent form from submitting
+     event.preventDefault();
+     var artist = $('#location').val();
+    
+     console.log(artist);
+
+    // $('beer-holder').html(artist);
+    
+  });
 
 
   var proxyURL = 'https://shielded-hamlet-43668.herokuapp.com/';
@@ -37,16 +51,7 @@ var artist = $('locationInput').val();
   }).then(function(response) {});
 
 
-  // $("#letsRock").on("click", function(event) {
-  //   // prevent form from submitting
-  //   event.preventDefault();
-    
-  //   console.log(artist);
-
-  //   $('beer-holder').html(artist);
-    
-  // });
-
+});
     
 
 
