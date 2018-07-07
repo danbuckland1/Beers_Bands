@@ -11,6 +11,7 @@ body{
     border: 4px;
     border-radius: 20px;
 
+
     margin-top: 50px;
 }
 
@@ -48,6 +49,7 @@ input {
 #letsRock {
     margin-left: 500px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
     
     
 }
@@ -57,6 +59,14 @@ input {
     margin-top: 20px;
     float: left;
 }
+
+.map-holder {
+    margin-left: 240px;
+    margin-top: 20px;
+    float: left;
+}
+
+
 
 
 
