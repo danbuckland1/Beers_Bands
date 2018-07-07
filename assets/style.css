@@ -1,5 +1,7 @@
+
 body{
     background: url(C:\Users\susha\Desktop\Class_Stuff\Class_Projects\Project1\Beers_Bands\assets/stadium.jpg) no-repeat;
+    background: url(../assets/images/stadium.jpg) no-repeat;
     background-size: 1450px;
 }
 
@@ -9,6 +11,7 @@ body{
     border: 4px;
     border-radius: 20px;
 
+    margin-top: 50px;
 }
 
 h1{
@@ -19,7 +22,9 @@ h1{
 }
 
 input {
+
     border-radius: 5px;
+
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
@@ -38,3 +43,22 @@ input {
 #locationInput{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
+#letsRock {
+    margin-left: 500px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}
+
+.map-holder {
+    margin-left: 240px;
+    margin-top: 20px;
+    float: left;
+}
+
+
+
+
+
