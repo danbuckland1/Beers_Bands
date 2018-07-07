@@ -37,7 +37,7 @@ $('#letsRock').on("click", function(event) {
   // var queryURL1 = 'http://beermapping.com/webservice/loccity/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
   var queryURL2 = 'http://rest.bandsintown.com/artists/' + artist + '/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname= ' + artist
   //var queryURL2 = 'http://rest.bandsintown.com/Drake/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname=Drake' 
-console.log(queryURL2);
+// console.log(queryURL2);
 
 
   $.ajax({
@@ -51,10 +51,31 @@ console.log(queryURL2);
     method: "GET"
     // dataType: "xml",
   }).then(function(response) {
-    console.log (response);
-  $(".beer-holder").text(response);
+    // console.log (response);
+  //  $(".jumbotron").text(response);
 
   //convert object to string
+   for (i = 0; i < 10; i++) {
+     console.log(response[i].venue.city);
+    var city = JSON.stringify(response[i].venue.city);
+   
+    
+    // $(".beer-holder").html(response[i].venue.city);
+     // console.log(response.venue.city);
+   }
+   var city = JSON.stringify(response[i].venue.city);
+   
+     console.log(city);
+
+   $(".jumbotron").append(city);
+
+   
+  
+    //how to loop through ajax response object
+    
+  // }
+   
+
   
   });
 
