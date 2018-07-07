@@ -66,7 +66,7 @@ $(document).ready(function(){
 
   //When you click the Let's Rock button....
   $("body").on("click","#letsRock", function(){
-    console.log("testing");
+
     //Store the typed in value to variable location
     var location = $("#locationInput").val().trim();
     //Replace spaces in location string with +
