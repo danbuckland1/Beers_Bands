@@ -1,5 +1,7 @@
+// src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"
+// src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+
 
 var config = {
     apiKey: "AIzaSyA34rCupaiOnfXRKBhsmgYsTc6Brp9ysew",
@@ -9,6 +11,7 @@ var config = {
     storageBucket: "beers-and-bands-rev-1.appspot.com",
     messagingSenderId: "592809981196"
   };
+
   firebase.initializeApp(config);
 
 
@@ -33,5 +36,9 @@ var config = {
     dataType: "xml",
   }).then(function(response) {});
 
+
+  // }, function(errorObject) {
+  //     console.log("Errors handled: " + errorObject.code);
+  //   });
  
  
