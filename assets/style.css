@@ -1,3 +1,4 @@
+
 body{
     background: url(../assets/images/stadium.jpg) no-repeat;
     background-size: 1450px;
@@ -8,7 +9,7 @@ body{
     background-color: white;
     border: 4px;
     border-radius: 20px;
-    margin-top: 10px;
+    margin-top: 50px;
 
 }
 
@@ -41,8 +42,17 @@ input {
 
 #letsRock {
     margin-left: 500px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
     
 }
+
+.map-holder {
+    margin-left: 240px;
+    margin-top: 20px;
+    float: left;
+}
+
 
 
 
