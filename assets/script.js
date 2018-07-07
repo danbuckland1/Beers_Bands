@@ -29,14 +29,16 @@ $('#letsRock').on("click", function(event) {
 
     // $('beer-holder').html(artist);
     
-  });
+  
 
 
   var proxyURL = 'https://shielded-hamlet-43668.herokuapp.com/';
   var queryURL1 = 'http://beermapping.com/webservice/loccity/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
   // var queryURL1 = 'http://beermapping.com/webservice/loccity/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
-  var queryURL2 = 'http://rest.bandsintown.com/artists/maroon+5/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname=maroon+5'
-  //var queryURL2 = 'http://rest.bandsintown.com/artists/' + artist + '/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname=' + artist
+  var queryURL2 = 'http://rest.bandsintown.com/artists/' + artist + '/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname= ' + artist
+  //var queryURL2 = 'http://rest.bandsintown.com/Drake/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname=Drake' 
+console.log(queryURL2);
+
 
   $.ajax({
     url: proxyURL + queryURL1,
@@ -46,14 +48,21 @@ $('#letsRock').on("click", function(event) {
 
   $.ajax({
     url: proxyURL + queryURL2,
-    method: "GET",
-    dataType: "xml",
-  }).then(function(response) {});
+    method: "GET"
+    // dataType: "xml",
+  }).then(function(response) {
+    console.log (response);
+  $(".beer-holder").text(response);
+
+  //convert object to string
+  
+  });
 
 
 });
-    
 
+    
+});
 
   // }, function(errorObject) {
   //     console.log("Errors handled: " + errorObject.code);
