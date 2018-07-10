@@ -66,9 +66,8 @@ $(document).ready(function(){
 
   //When you click the Let's Rock button....
   $("body").on("click","#letsRock", function(){
-
     //Store the typed in value to variable location
-    var location = $("#locationInput").val().trim();
+    var location = $("#location").val().trim();
     //Replace spaces in location string with +
     location.replace(" ","+");
     //plug location value into google map src and replace the original src in the html
