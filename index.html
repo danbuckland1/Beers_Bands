@@ -6,35 +6,42 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
         <!-- Custom Stylesheet -->
+
+        
         <link rel="stylesheet" href="assets/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Anton|New+Rocker|Rock+Salt" rel="stylesheet">
-        <!-- JQuery -->
-        
+         <!-- JQuery -->
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <!-- Custom Javascript -->
+        <script src="assets/script.js"></script>
+
+
     </head>
     
     <body>
         <div class="container">
             <div class="jumbotron">
-                    <h1 class="display-4">BEERS AND BANDS!</h1>
+                    <h1 class="display-4">BEERS AND BANDS</h1>
                    
                   </div>
                   <form>
                         <div class="form-group">
-                          <label for="location">Type In Your Location!</label>
-                          <input type="search" class="form-control" id="locationInput" aria-describedby="locationSearch">
-                          <small id="locationHelp" class="form-text text-muted"></small>
+                          <label for="location">Type In Your Location</label>
+                          <input type="text" class="form-control" id="location" />
+                          <!-- <small id="locationHelp" class="form-text text-muted"></small> -->
                         </div>
                       </form>
 
-                      <input type="button" value="Let's Rock">
+                      <input type="button" id="letsRock" value="Let's Rock">
 
 
                       <div class="row">
                           <div class="col-4">
                               <div class="beer-holder">
+                               
                                   
-
                               </div>
                           </div>
                       </div>
@@ -42,7 +49,14 @@
                       <div class="row">
                             <div class="col-4">
                                 <div class="map-holder">
-                                   
+                                    <iframe
+                                    width="600"
+                                    height="450"
+                                    frameborder="0" style="border:0"
+                                    id="google-map"
+                                    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBbmoAi4qVWUugXB3-QpKR_kdAhtalKGI4
+                                      &q=Beer+In+Jersey+City+NJ" allowfullscreen>
+                                    </iframe>
   
                                 </div>
                             </div>
@@ -57,8 +71,11 @@
                           </div>
 
                       </div>
+
         </div>
 
-    <link rel="stylesheet" href="assets/script.js">
+
+            </div>
+
     </body>
 </html>
