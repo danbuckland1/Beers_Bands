@@ -187,6 +187,7 @@ $(document).ready(function () {
         location.push(response[4].venue.longitude);
         location.push(response[4].venue.latitude);
 
+<<<<<<< HEAD
         console.log(location);
 
         $('.beer-holder').html(location);
@@ -284,6 +285,16 @@ $(document).ready(function () {
 
     });
 
+=======
+  //When you click the Let's Rock button....
+  $("body").on("click","#letsRock", function(){
+    //Store the typed in value to variable location
+    var location = $("#location").val().trim();
+    //Replace spaces in location string with +
+    location.replace(" ","+");
+    //plug location value into google map src and replace the original src in the html
+    $("#google-map").attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyBbmoAi4qVWUugXB3-QpKR_kdAhtalKGI4&q=Beer+In+" + location);
+>>>>>>> f3aa1590b1eb65993a6d952e4409e1ea96dd5902
   });
 
 });
