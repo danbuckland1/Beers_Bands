@@ -51,29 +51,29 @@ $(document).ready(function () {
 
 
       //Log Cities to Console
-      for (i = 0; i < 12; i++) {
-        console.log(response[i].venue.city);
-      }
+      // for (i = 0; i < 12; i++) {
+      //   console.log(response[i].venue.city);
+      // }
 
       //Log Concert Dates and Times to Console
-      for (j = 0; j < 12; j++) {
-        console.log(response[j].datetime);
-      }
+      // for (j = 0; j < 12; j++) {
+      //   console.log(response[j].datetime);
+      // }
 
       //Log venue names to Console
-      for (k = 0; k < 12; k++) {
-        console.log(response[k].venue.name);
-      }
+      // for (k = 0; k < 12; k++) {
+      //   console.log(response[k].venue.name);
+      // }
 
       //Log Latitude to Console
-      for (l = 0; l < 12; l++) {
-        console.log(response[l].venue.latitude);
-      }
+      // for (l = 0; l < 12; l++) {
+      //   console.log(response[l].venue.latitude);
+      // }
 
       //Log Longitude to Console
-      for (m = 0; m < 12; m++) {
-        console.log(response[m].venue.longitude);
-      }
+      // for (m = 0; m < 12; m++) {
+      //   console.log(response[m].venue.longitude);
+      // }
 
 
       //Conver JSON data to string objects
@@ -83,7 +83,7 @@ $(document).ready(function () {
 
 
 
-      //Write data to page
+      //Store JSON strings into variables
       var cityDateTimeOne = JSON.stringify('City: ' + response[0].venue.city) + '<br>' + ' Date/Time: ' + (response[0].datetime) + '<br>' + ' Venue: ' + (response[0].venue.name) + '<br>';
       var cityDateTimeTwo = JSON.stringify('City: ' + response[1].venue.city) + '<br>' + ' Date/Time: ' + (response[1].datetime) + '<br>' + ' Venue: ' + (response[1].venue.name) + '<br>';
       var cityDateTimeThree = JSON.stringify('City: ' + response[2].venue.city) + '<br>' + ' Date/Time: ' + (response[2].datetime) + '<br>' + ' Venue: ' + (response[2].venue.name) + '<br>';
@@ -96,13 +96,15 @@ $(document).ready(function () {
       var cityDateTimeTen = JSON.stringify('City: ' + response[9].venue.city) + '<br>' + ' Date/Time: ' + (response[9].datetime) + '<br>' + ' Venue: ' + (response[9].venue.name) + '<br>';
       var cityDateTimeEleven = JSON.stringify('City: ' + response[10].venue.city) + '<br>' + ' Date/Time: ' + (response[10].datetime) + '<br>' + ' Venue: ' + (response[10].venue.name) + '<br>';
       var cityDateTimeTwelve = JSON.stringify('City: ' + response[11].venue.city) + '<br>' + ' Date/Time: ' + (response[11].datetime) + '<br>' + ' Venue: ' + (response[11].venue.name) + '<br>';
+      
+      //Will convert time and date so that user can read it
       //  var dateTimeConverted = new Date("2018-07-26 19:00:00");
       //  dateTimeConverted = moment(dateTime).format("MM-DD-YYYY HH:mm");
       //  var dateTimeConverted = moment(dateTime,"MM-dd-yyyyTHH:MM");
-      //attempt to convert time and date
+      
 
 
-      //  console.log(dateTimeConverted);
+      //Display JSON string variables as buttons and append them to page
       $(".jumbotron").append('<button id = concert-buttonOne>' + cityDateTimeOne);
       $(".jumbotron").append('<button id = concert-buttonTwo>' + cityDateTimeTwo);
       $(".jumbotron").append('<button id = concert-buttonThree>' + cityDateTimeThree);
@@ -119,168 +121,168 @@ $(document).ready(function () {
 
 
       //push latitude and lonngitude to array on click
-      var location = [];
+      // var location = [];
 
-      $('#concert-buttonOne').on("click", function (event) {
+      // $('#concert-buttonOne').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[0].venue.longitude);
-        location.push(response[0].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[0].venue.longitude);
+      //   location.push(response[0].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
+      //   $('.beer-holder').html(location);
 
-      });
-      $('#concert-buttonTwo').on("click", function (event) {
+      // });
+      // $('#concert-buttonTwo').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[1].venue.longitude);
-        location.push(response[1].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[1].venue.longitude);
+      //   location.push(response[1].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
 
-      $('#concert-buttonThree').on("click", function (event) {
+      // $('#concert-buttonThree').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[2].venue.longitude);
-        location.push(response[2].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[2].venue.longitude);
+      //   location.push(response[2].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
-
-
-
-      $('#concert-buttonFour').on("click", function (event) {
-
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[3].venue.longitude);
-        location.push(response[3].venue.latitude);
-
-        console.log(location);
-
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
 
 
 
-      $('#concert-buttonFive').on("click", function (event) {
+      // $('#concert-buttonFour').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[4].venue.longitude);
-        location.push(response[4].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[3].venue.longitude);
+      //   location.push(response[3].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
-
-      $('#concert-buttonSix').on("click", function (event) {
-
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[5].venue.longitude);
-        location.push(response[5].venue.latitude);
-
-        console.log(location);
-
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
 
 
-      $('#concert-buttonSeven').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[6].venue.longitude);
-        location.push(response[6].venue.latitude);
+      // $('#concert-buttonFive').on("click", function (event) {
 
-        console.log(location);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[4].venue.longitude);
+      //   location.push(response[4].venue.latitude);
 
-        $('.beer-holder').html(location);
-      });
+      //   console.log(location);
 
+      //   $('.beer-holder').html(location);
+      // });
 
-      $('#concert-buttonEight').on("click", function (event) {
+      // $('#concert-buttonSix').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[7].venue.longitude);
-        location.push(response[7].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[5].venue.longitude);
+      //   location.push(response[5].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
-
-
-      $('#concert-buttonNine').on("click", function (event) {
-
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[8].venue.longitude);
-        location.push(response[8].venue.latitude);
-
-        console.log(location);
-
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
 
 
-      $('#concert-buttonTen').on("click", function (event) {
+      // $('#concert-buttonSeven').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[9].venue.longitude);
-        location.push(response[9].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[6].venue.longitude);
+      //   location.push(response[6].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
-
-
-      $('#concert-buttonEleven').on("click", function (event) {
-
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[10].venue.longitude);
-        location.push(response[10].venue.latitude);
-
-        console.log(location);
-
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
 
 
-      $('#concert-buttonTwelve').on("click", function (event) {
+      // $('#concert-buttonEight').on("click", function (event) {
 
-        event.preventDefault();
-        location.length = 0;
-        location.push(response[11].venue.longitude);
-        location.push(response[11].venue.latitude);
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[7].venue.longitude);
+      //   location.push(response[7].venue.latitude);
 
-        console.log(location);
+      //   console.log(location);
 
-        $('.beer-holder').html(location);
-      });
+      //   $('.beer-holder').html(location);
+      // });
+
+
+      // $('#concert-buttonNine').on("click", function (event) {
+
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[8].venue.longitude);
+      //   location.push(response[8].venue.latitude);
+
+      //   console.log(location);
+
+      //   $('.beer-holder').html(location);
+      // });
+
+
+      // $('#concert-buttonTen').on("click", function (event) {
+
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[9].venue.longitude);
+      //   location.push(response[9].venue.latitude);
+
+      //   console.log(location);
+
+      //   $('.beer-holder').html(location);
+      // });
+
+
+      // $('#concert-buttonEleven').on("click", function (event) {
+
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[10].venue.longitude);
+      //   location.push(response[10].venue.latitude);
+
+      //   console.log(location);
+
+      //   $('.beer-holder').html(location);
+      // });
+
+
+      // $('#concert-buttonTwelve').on("click", function (event) {
+
+      //   event.preventDefault();
+      //   location.length = 0;
+      //   location.push(response[11].venue.longitude);
+      //   location.push(response[11].venue.latitude);
+
+      //   console.log(location);
+
+      //   $('.beer-holder').html(location);
+      // });
 
     });
 
     $("body").on("click","#letsRock", function(){
       console.log("testing");
       //Store the typed in value to variable location
-      var locationInput = $("#location").val().trim();
+      var locationInput = $("#artist").val().trim();
       //Replace spaces in location string with +
       locationInput.replace(" ","+");
       //plug location value into google map src and replace the original src in the html
