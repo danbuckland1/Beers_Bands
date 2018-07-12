@@ -1,5 +1,7 @@
+//Reads the HTML before reading the javascript
 $(document).ready(function () {
 
+  //Initializing firebase
   var config = {
     apiKey: "AIzaSyA34rCupaiOnfXRKBhsmgYsTc6Brp9ysew",
     authDomain: "beers-and-bands-rev-1.firebaseapp.com",
@@ -11,28 +13,20 @@ $(document).ready(function () {
 
   firebase.initializeApp(config);
 
-
-
-  //  var artist = $('#locationInput').val();
-
+//Create variable to reference the database
   var dataRef = firebase.database();
-  //var artist = "Drake";
-  // var location = "New+York"
-  // console.log(artist);
 
-  $('#letsRock').on("click", function (event) {
-    //   // prevent form from submitting
+//When you click the "Let's Rock" Button...
+  $("#letsRock").on("click", function (event) {
+   // prevent form from submitting
     event.preventDefault();
-    var artist = $('#location').val();
+    //Store value that user typed into variable artist
+    var artist = $("#artist").val().trim();
 
     console.log(artist);
 
-    // $('beer-holder').html(artist);
-
-
-
-
     var proxyURL = 'https://shielded-hamlet-43668.herokuapp.com/';
+    //Are we still using this??
     var queryURL1 = 'http://beermapping.com/webservice/loccity/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
     // var queryURL1 = 'http://beermapping.com/webservice/loccity/1cd5db8a402574bb7ecab4285b88793f/jersey+city&s=json'
     var queryURL2 = 'http://rest.bandsintown.com/artists/' + artist + '/events?app_id=1f631e0138387b85bc49eb32aa23ea48&artistname= ' + artist
@@ -40,12 +34,14 @@ $(document).ready(function () {
     // console.log(queryURL2);
 
 
+    //AJAX call for beermapping, are we still using this???
     $.ajax({
       url: proxyURL + queryURL1,
       method: "GET",
       dataType: "xml",
     }).then(function (response) { });
 
+    //AJAX call to Bands in Town API
     $.ajax({
       url: proxyURL + queryURL2,
       method: "GET"
@@ -54,43 +50,40 @@ $(document).ready(function () {
       console.log(response);
 
 
-      //log cities
+      //Log Cities to Console
       for (i = 0; i < 12; i++) {
         console.log(response[i].venue.city);
-        // var city = JSON.stringify(response[i].venue.city);
       }
 
-      //log concert date and time
+      //Log Concert Dates and Times to Console
       for (j = 0; j < 12; j++) {
         console.log(response[j].datetime);
       }
 
-      //log venue names
+      //Log venue names to Console
       for (k = 0; k < 12; k++) {
         console.log(response[k].venue.name);
       }
 
-      //log latitude
+      //Log Latitude to Console
       for (l = 0; l < 12; l++) {
         console.log(response[l].venue.latitude);
       }
 
-      //log longitude
+      //Log Longitude to Console
       for (m = 0; m < 12; m++) {
         console.log(response[m].venue.longitude);
       }
 
 
-      //convert json data to string objects
-
+      //Conver JSON data to string objects
       var city = JSON.stringify(response[i].venue.city);
       var dateTime = JSON.stringify(response[j].datetime);
       var venue = JSON.stringify(response[k].venue.name);
 
 
 
-      //write data to page
-
+      //Write data to page
       var cityDateTimeOne = JSON.stringify('City: ' + response[0].venue.city) + '<br>' + ' Date/Time: ' + (response[0].datetime) + '<br>' + ' Venue: ' + (response[0].venue.name) + '<br>';
       var cityDateTimeTwo = JSON.stringify('City: ' + response[1].venue.city) + '<br>' + ' Date/Time: ' + (response[1].datetime) + '<br>' + ' Venue: ' + (response[1].venue.name) + '<br>';
       var cityDateTimeThree = JSON.stringify('City: ' + response[2].venue.city) + '<br>' + ' Date/Time: ' + (response[2].datetime) + '<br>' + ' Venue: ' + (response[2].venue.name) + '<br>';
