@@ -3,8 +3,8 @@
     <head>
         <meta charset"UTF-8">
         <title>BEERS and BANDS</title>
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
         <!-- Custom Stylesheet -->
 
         
@@ -16,6 +16,8 @@
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <!-- Custom Javascript -->
         <script src="assets/script.js"></script>
+        <!-- Bootstrap Javascript -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 
 
     </head>
@@ -34,12 +36,33 @@
                         </div>
                       </form>
 
-                      <input type="button" id="letsRock" value="Let's Rock">
-
+                      <input type="button" id="letsRock" value="Let's Rock" data-toggle="modal" data-target="#exampleModalLong">
+                      
+                      <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                  <!-- Venue Buttons Here -->
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- End Modal -->
 
                       <div class="row">
                           <div class="col-4">
-                              <div class="beer-holder">
+                              <div class="venue">
                                
                                   
                               </div>
@@ -64,7 +87,7 @@
 
                       <div class="row">
                           <div class="col-4">
-                              <div class="band-holder">
+                              <div class="beer-holder">
                                   
                                   
                               </div>

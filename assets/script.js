@@ -1,5 +1,5 @@
 //Reads the HTML before reading the javascript
-$(document).ready(function () {
+$(document).ready (function () {
 
   //Initializing firebase
   var config = {
@@ -47,33 +47,6 @@ $(document).ready(function () {
       method: "GET"
       // dataType: "xml",
     }).then(function (response) {
-      console.log(response);
-
-
-      //Log Cities to Console
-      // for (i = 0; i < 12; i++) {
-      //   console.log(response[i].venue.city);
-      // }
-
-      //Log Concert Dates and Times to Console
-      // for (j = 0; j < 12; j++) {
-      //   console.log(response[j].datetime);
-      // }
-
-      //Log venue names to Console
-      // for (k = 0; k < 12; k++) {
-      //   console.log(response[k].venue.name);
-      // }
-
-      //Log Latitude to Console
-      // for (l = 0; l < 12; l++) {
-      //   console.log(response[l].venue.latitude);
-      // }
-
-      //Log Longitude to Console
-      // for (m = 0; m < 12; m++) {
-      //   console.log(response[m].venue.longitude);
-      // }
 
 
       //Conver JSON data to string objects
@@ -102,202 +75,57 @@ $(document).ready(function () {
       //  dateTimeConverted = moment(dateTime).format("MM-DD-YYYY HH:mm");
       //  var dateTimeConverted = moment(dateTime,"MM-dd-yyyyTHH:MM");
       
-
+      $('#exampleModalLong').on('show.bs.modal', function () {
+        console.log("IT WORKS!");
+        $(this).find(".modal-body").text("THIS WORKS!!");
+      });
 
       //Display JSON string variables as buttons and append them to page
-      $(".jumbotron").append('<button id = concert-buttonOne>' + cityDateTimeOne);
-      $(".jumbotron").append('<button id = concert-buttonTwo>' + cityDateTimeTwo);
-      $(".jumbotron").append('<button id = concert-buttonThree>' + cityDateTimeThree);
-      $(".jumbotron").append('<button id = concert-buttonFour>' + cityDateTimeFour);
-      $(".jumbotron").append('<button id = concert-buttonFive>' + cityDateTimeFive);
-      $(".jumbotron").append('<button id = concert-buttonSix>' + cityDateTimeSix);
-      $(".jumbotron").append('<button id = concert-buttonSeven>' + cityDateTimeSeven);
-      $(".jumbotron").append('<button id = concert-buttonEight>' + cityDateTimeEight);
-      $(".jumbotron").append('<button id = concert-buttonNine>' + cityDateTimeNine);
-      $(".jumbotron").append('<button id = concert-buttonTen>' + cityDateTimeTen);
-      $(".jumbotron").append('<button id = concert-buttonEleven>' + cityDateTimeEleven);
-      $(".jumbotron").append('<button id = concert-buttonTwelve>' + cityDateTimeTwelve);
+      $(".modal-body").append('<button id = concert-buttonOne value="0" class="venue-btn">' + cityDateTimeOne);
+      $(".modal-body").append('<button id = concert-buttonTwo value="1" class="venue-btn">' + cityDateTimeTwo);
+      $(".modal-body").append('<button id = concert-buttonThree value="2" class="venue-btn">' + cityDateTimeThree);
+      $(".modal-body").append('<button id = concert-buttonFour value="3" class="venue-btn">' + cityDateTimeFour);
+      $(".modal-body").append('<button id = concert-buttonFive value="4" class="venue-btn">' + cityDateTimeFive);
+      $(".modal-body").append('<button id = concert-buttonSix value="5" class="venue-btn">' + cityDateTimeSix);
+      $(".modal-body").append('<button id = concert-buttonSeven value="6" class="venue-btn">' + cityDateTimeSeven);
+      $(".modal-body").append('<button id = concert-buttonEight value="7" class="venue-btn">' + cityDateTimeEight);
+      $(".modal-body").append('<button id = concert-buttonNine value="8" class="venue-btn">' + cityDateTimeNine);
+      $(".modal-body").append('<button id = concert-buttonTen value="9" class="venue-btn">' + cityDateTimeTen);
+      $(".modal-body").append('<button id = concert-buttonEleven value="10" class="venue-btn">' + cityDateTimeEleven);
+      $(".modal-body").append('<button id = concert-buttonTwelve value="11" class="venue-btn">' + cityDateTimeTwelve);
+
+            // $(".modal-body").append('<button id = concert-buttonOne value="0" class="venue-btn">' + cityDateTimeOne);
+      // $(".venue").append('<button id = concert-buttonTwo value="1" class="venue-btn">' + cityDateTimeTwo);
+      // $(".venue").append('<button id = concert-buttonThree value="2" class="venue-btn">' + cityDateTimeThree);
+      // $(".venue").append('<button id = concert-buttonFour value="3" class="venue-btn">' + cityDateTimeFour);
+      // $(".modal-body").append('<button id = concert-buttonFive value="4" class="venue-btn">' + cityDateTimeFive);
+      // $(".modal-body").append('<button id = concert-buttonSix value="5" class="venue-btn">' + cityDateTimeSix);
+      // $(".modal-body").append('<button id = concert-buttonSeven value="6" class="venue-btn">' + cityDateTimeSeven);
+      // $(".modal-body").append('<button id = concert-buttonEight value="7" class="venue-btn">' + cityDateTimeEight);
+      // $(".modal-body").append('<button id = concert-buttonNine value="8" class="venue-btn">' + cityDateTimeNine);
+      // $(".modal-body").append('<button id = concert-buttonTen value="9" class="venue-btn">' + cityDateTimeTen);
+      // $(".modal-body").append('<button id = concert-buttonEleven value="10" class="venue-btn">' + cityDateTimeEleven);
+      // $(".modal-body").append('<button id = concert-buttonTwelve value="11" class="venue-btn">' + cityDateTimeTwelve);
 
 
-
-      //push latitude and lonngitude to array on click
-      // var location = [];
-
-      // $('#concert-buttonOne').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[0].venue.longitude);
-      //   location.push(response[0].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-
-      // });
-      // $('#concert-buttonTwo').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[1].venue.longitude);
-      //   location.push(response[1].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-      // $('#concert-buttonThree').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[2].venue.longitude);
-      //   location.push(response[2].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-
-      // $('#concert-buttonFour').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[3].venue.longitude);
-      //   location.push(response[3].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-
-      // $('#concert-buttonFive').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[4].venue.longitude);
-      //   location.push(response[4].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-      // $('#concert-buttonSix').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[5].venue.longitude);
-      //   location.push(response[5].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonSeven').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[6].venue.longitude);
-      //   location.push(response[6].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonEight').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[7].venue.longitude);
-      //   location.push(response[7].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonNine').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[8].venue.longitude);
-      //   location.push(response[8].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonTen').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[9].venue.longitude);
-      //   location.push(response[9].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonEleven').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[10].venue.longitude);
-      //   location.push(response[10].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
-
-
-      // $('#concert-buttonTwelve').on("click", function (event) {
-
-      //   event.preventDefault();
-      //   location.length = 0;
-      //   location.push(response[11].venue.longitude);
-      //   location.push(response[11].venue.latitude);
-
-      //   console.log(location);
-
-      //   $('.beer-holder').html(location);
-      // });
+      $("body").on("click","button", function(){
+        var number = $(this).attr("value");
+        //Store the typed in value to variable location
+        var locationInput = response[number].venue.city;
+        //Replace spaces in location string with +
+        locationInput.replace(" ","+");
+        //plug location value into google map src and replace the original src in the html
+        $("#google-map").attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyBbmoAi4qVWUugXB3-QpKR_kdAhtalKGI4&q=Bars+In+" + locationInput);
+      });
 
     });
 
-    $("body").on("click","#letsRock", function(){
-      console.log("testing");
-      //Store the typed in value to variable location
-      var locationInput = $("#artist").val().trim();
-      //Replace spaces in location string with +
-      locationInput.replace(" ","+");
-      //plug location value into google map src and replace the original src in the html
-      $("#google-map").attr("src","https://www.google.com/maps/embed/v1/search?key=AIzaSyBbmoAi4qVWUugXB3-QpKR_kdAhtalKGI4&q=+In+" + locationInput);
-    });
+   
    
    });
   
 
   });
-
-
-
-
-
 
 
 
