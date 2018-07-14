@@ -6,18 +6,16 @@
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
         <!-- Custom Stylesheet -->
-
-        
         <link rel="stylesheet" href="assets/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Anton|New+Rocker|Rock+Salt" rel="stylesheet">
          <!-- JQuery -->
         <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <!-- Custom Javascript -->
-        <script src="assets/script.js"></script>
         <!-- Bootstrap Javascript -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+        <!-- Custom Javascript -->
+        <script src="assets/script.js"></script>
 
 
     </head>
@@ -30,48 +28,43 @@
                   </div>
                   <form>
                         <div class="form-group">
-                          <label for="artist">Type in an Artist</label>
+                          <label for="artist">Type in an Band</label>
                           <input type="text" class="form-control" id="artist" />
-                          <!-- <small id="locationHelp" class="form-text text-muted"></small> -->
                         </div>
                       </form>
 
-                      <input type="button" id="letsRock" value="Let's Rock" data-toggle="modal" data-target="#exampleModalLong">
-                      
-                      <!-- Modal -->
-                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                    <!-- Let's Rock Button -->
+                      <!-- <input type="button" class="btn-light" id="letsRock" value="Let's Rock" data-toggle="modal" data-target="#venue-modal"> -->
+                      <button type="button" class="btn btn-light" id="letsRock" value="Let's Rock" data-toggle="modal" data-target="#venue-modal">Let's Rock</button>
+
+                      <!-- Modal Start -->
+                      <div class="modal" id="venue-modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                              <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                  <h5 class="modal-title">Select A Venue</h5>
                                 </div>
                                 <div class="modal-body">
-                                  <!-- Venue Buttons Here -->
+                                  <!-- Venues go here -->
                                 </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                              </div>
                             </div>
-                            </div>
-                        </div>
-                        <!-- End Modal -->
+                          </div>
+                    <!-- Modal End -->
 
                       <div class="row">
-                          <div class="col-4">
+                          <div class="column">
                               <div class="venue">
-                               
-                                  
+                                <!-- Selected venue goes here -->
                               </div>
                           </div>
                       </div>
 
+                      <!-- Google Maps begins -->
                       <div class="row">
-                            <div class="col-4">
+                            <div class="column">
                                 <div class="map-holder">
+                                    <p class='selected-venue'>Beer Map</p>
                                     <iframe
                                     width="600"
                                     height="450"
@@ -84,16 +77,7 @@
                                 </div>
                             </div>
                         </div>
-
-                      <div class="row">
-                          <div class="col-4">
-                              <div class="beer-holder">
-                                  
-                                  
-                              </div>
-                          </div>
-
-                      </div>
+                        <!-- Google Maps Ends -->
 
         </div>
 

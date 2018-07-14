@@ -3,6 +3,7 @@ body{
     background: url(C:\Users\susha\Desktop\Class_Stuff\Class_Projects\Project1\Beers_Bands\assets/stadium.jpg) no-repeat;
     background: url(../assets/images/stadium.jpg) no-repeat;
     background-size: 1450px;
+    background-attachment: fixed;
 }
 
 
@@ -10,8 +11,6 @@ body{
     background-color: white;
     border: 4px;
     border-radius: 20px;
-
-
     margin-top: 50px;
 }
 
@@ -23,15 +22,14 @@ h1{
 }
 
 input {
-
     border-radius: 5px;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 
 
-.form-group{
+.form-group, .selected-venue {
     text-align: center;
     font-family: 'Rock Salt', cursive;
     color: white;
@@ -46,23 +44,12 @@ input {
 
 
 #letsRock {
-    margin-left: 500px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-    
-    
+    margin-left: 500px;    
 }
 
-.map-holder {
-    margin-left: 240px;
-    margin-top: 20px;
-    float: left;
-}
-
-.map-holder {
-    margin-left: 240px;
-    margin-top: 20px;
-    float: left;
+.column {
+    margin: auto;
+    padding: 20px;
 }
 
 .jumbotron{
@@ -75,20 +62,20 @@ input {
   margin: 0 10px 10px 0;
   padding: 15px 45px;
   font-size: 16px;
-  font-family: Helvetica;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.8;
   border-color: #27496d;
 } 
 
 .venue-btn:hover {
-    background-color: #346392;
-    text-shadow: -1px 1px #27496d;
-    font-family: 'New Rocker', cursive;
+    /* background-color: lightgray; */
+    text-shadow: -1px 1px darkslategray;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 
 .venue-btn:active {
-    background-color: red;
+    background-color: lightgray;
 } 
 
   .beer-holder{
@@ -97,14 +84,23 @@ input {
       background-color: white;
   }
 
-  .venue{
-      width: 1046px;
-      padding: 10px;
-      margin-left: auto;
-      margin-right: auto;
+  .modal-body {
+      text-align: center;
   }
 
- 
+ .venue {
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .venue-details {
+     background-color: white;
+     border-radius: 5px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     padding: 10px;
+ }
 
 
 
