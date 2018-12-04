@@ -36,6 +36,7 @@ $(document).ready (function () {
     event.preventDefault();
     //Store value that user typed into variable artist
     var artist = $("#artist").val().trim();
+    console.log(artist +"ARTIST");
 
     var proxyURL = 'https://shielded-hamlet-43668.herokuapp.com/';
     //Are we still using this??
@@ -51,7 +52,7 @@ $(document).ready (function () {
       method: "GET"
       // dataType: "xml",
     }).then(function (response) {
-
+      // console.log(response);
       //If query returns no results
       if (response.length === 0){
         //Clear out previous contents of modal
@@ -61,8 +62,15 @@ $(document).ready (function () {
 
       }
 
+      for (i = 0; i < 8; i++) {
+        console.log(response[i].venue.name);
+        console.log(response[i].venue.city);
+        console.log(response[i].venue.datetime);
+      }
+
       //Store JSON strings into variables
-      var cityDateTimeOne = JSON.stringify('<b>Venue:</b> ' + (response[0].venue.name) + '<br>' + ' <b>City:</b> ' + response[0].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[0].datetime) + '<br>';
+      var cityDateTimeOne = JSON.stringify('<b>Venue:</b> ' + (response[0].venue.name) + '<br>' + ' <b>City:</b> ' + response[1].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[1].datetime) + '<br>';
+      console.log(cityDateTimeOne);
       var cityDateTimeTwo = JSON.stringify('<b>Venue:</b> ' + (response[1].venue.name) + '<br>' + ' <b>City:</b> ' + response[1].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[1].datetime) + '<br>';
       var cityDateTimeThree = JSON.stringify('<b>Venue:</b> ' + (response[2].venue.name) + '<br>' + ' <b>City:</b> ' + response[2].venue.city) + '<br>' + ' <b>Date/Time:</b>: ' + (response[2].datetime) + '<br>';
       var cityDateTimeFour = JSON.stringify('<b>Venue:</b> ' + (response [3].venue.name) + '<br>' + ' <b>City:</b> ' + response[3].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[3].datetime) + '<br>';
@@ -70,10 +78,10 @@ $(document).ready (function () {
       var cityDateTimeSix = JSON.stringify('<b>Venue:</b> ' + (response[5].venue.name) + '<br>' + ' <b>City:</b> ' + response[5].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[5].datetime) + '<br>';
       var cityDateTimeSeven = JSON.stringify('<b>Venue:</b> ' + (response[6].venue.name) + '<br>' + ' <b>City:</b> ' + response[6].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[6].datetime) + '<br>';
       var cityDateTimeEight = JSON.stringify('<b>Venue:</b> ' + (response[7].venue.name) + '<br>' + ' <b>City:</b> ' + response[7].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[7].datetime) + '<br>';
-      var cityDateTimeNine = JSON.stringify('<b>Venue:</b> ' + (response[8].venue.name) + '<br>' + ' <b>City:</b> ' + response[8].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[8].datetime) + '<br>';
-      var cityDateTimeTen = JSON.stringify('<b>Venue:</b> ' + (response[9].venue.name) + '<br>' + ' <b>City:</b> ' + response[9].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[9].datetime) + '<br>';
-      var cityDateTimeEleven = JSON.stringify('<b>Venue:</b> ' + (response[10].venue.name) + '<br>' + ' <b>City:</b> ' + response[10].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[10].datetime) + '<br>';
-      var cityDateTimeTwelve = JSON.stringify('<b>Venue:</b> ' + (response[11].venue.name) + '<br>' + ' <b>City:</b> ' + response[11].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[11].datetime) + '<br>';
+      // var cityDateTimeNine = JSON.stringify('<b>Venue:</b> ' + (response[8].venue.name) + '<br>' + ' <b>City:</b> ' + response[8].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[8].datetime) + '<br>';
+      // var cityDateTimeTen = JSON.stringify('<b>Venue:</b> ' + (response[9].venue.name) + '<br>' + ' <b>City:</b> ' + response[9].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[9].datetime) + '<br>';
+      // var cityDateTimeEleven = JSON.stringify('<b>Venue:</b> ' + (response[10].venue.name) + '<br>' + ' <b>City:</b> ' + response[10].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[10].datetime) + '<br>';
+      // var cityDateTimeTwelve = JSON.stringify('<b>Venue:</b> ' + (response[11].venue.name) + '<br>' + ' <b>City:</b> ' + response[11].venue.city) + '<br>' + ' <b>Date/Time:</b> ' + (response[11].datetime) + '<br>';
       
       //Will convert time and date so that user can read it
       //  var dateTimeConverted = new Date("2018-07-26 19:00:00");
@@ -84,7 +92,8 @@ $(document).ready (function () {
       $(".modal-body").html("");
 
       //Display JSON string variables as buttons and append them to page
-      $(".modal-body").append('<button id = concert-buttonOne data-venue-name="' + response[0].venue.name + '" data-venue-city="' + response[0].venue.city + '" data-venue-time="' + response[0].datetime + '" class="venue-btn">' + cityDateTimeOne);
+      
+      $(".modal-body").append('<button id = concert-buttonOne data-venue-name=' + response[0].venue.name + '" data-venue-city="' + response[0].venue.city + '" data-venue-time="' + response[0].datetime + '" class="venue-btn">' + cityDateTimeOne);
       $(".modal-body").append('<button id = concert-buttonTwo data-venue-name="' + response[1].venue.name + '" data-venue-city="' + response[1].venue.city + '" data-venue-time="' + response[1].datetime + '" class="venue-btn">' + cityDateTimeTwo);
       $(".modal-body").append('<button id = concert-buttonThree data-venue-name="' + response[2].venue.name + '" data-venue-city="' + response[2].venue.city + '" data-venue-time="' + response[2].datetime + '" class="venue-btn">' + cityDateTimeThree);
       $(".modal-body").append('<button id = concert-buttonFour data-venue-name="' + response[3].venue.name + '" data-venue-city="' + response[3].venue.city + '" data-venue-time="' + response[3].datetime + '" class="venue-btn">' + cityDateTimeFour);
@@ -92,10 +101,10 @@ $(document).ready (function () {
       $(".modal-body").append('<button id = concert-buttonSix data-venue-name="' + response[5].venue.name + '" data-venue-city="' + response[5].venue.city + '" data-venue-time="' + response[5].datetime + '" class="venue-btn">' + cityDateTimeSix);
       $(".modal-body").append('<button id = concert-buttonSeven data-venue-name="' + response[6].venue.name + '" data-venue-city="' + response[6].venue.city + '" data-venue-time="' + response[6].datetime + '" class="venue-btn">' + cityDateTimeSeven);
       $(".modal-body").append('<button id = concert-buttonEight data-venue-name="' + response[7].venue.name + '" data-venue-city="' + response[7].venue.city + '" data-venue-time="' + response[7].datetime + '" class="venue-btn">' + cityDateTimeEight);
-      $(".modal-body").append('<button id = concert-buttonNine data-venue-name="' + response[8].venue.name + '" data-venue-city="' + response[8].venue.city + '" data-venue-time="' + response[8].datetime + '" class="venue-btn">' + cityDateTimeNine);
-      $(".modal-body").append('<button id = concert-buttonTen data-venue-name="' + response[9].venue.name + '" data-venue-city="' + response[9].venue.city + '" data-venue-time="' + response[9].datetime + '" class="venue-btn">' + cityDateTimeTen);
-      $(".modal-body").append('<button id = concert-buttonEleven data-venue-name="' + response[10].venue.name + '" data-venue-city="' + response[10].venue.city + '" data-venue-time="' + response[10].datetime + '" class="venue-btn">' + cityDateTimeEleven);
-      $(".modal-body").append('<button id = concert-buttonTwelve data-venue-name="' + response[11].venue.name + '" data-venue-city="' + response[11].venue.city + '" data-venue-time="' + response[11].datetime + '" class="venue-btn">' + cityDateTimeTwelve);
+      // $(".modal-body").append('<button id = concert-buttonNine data-venue-name="' + response[8].venue.name + '" data-venue-city="' + response[8].venue.city + '" data-venue-time="' + response[8].datetime + '" class="venue-btn">' + cityDateTimeNine);
+      // $(".modal-body").append('<button id = concert-buttonTen data-venue-name="' + response[9].venue.name + '" data-venue-city="' + response[9].venue.city + '" data-venue-time="' + response[9].datetime + '" class="venue-btn">' + cityDateTimeTen);
+      // $(".modal-body").append('<button id = concert-buttonEleven data-venue-name="' + response[10].venue.name + '" data-venue-city="' + response[10].venue.city + '" data-venue-time="' + response[10].datetime + '" class="venue-btn">' + cityDateTimeEleven);
+      // $(".modal-body").append('<button id = concert-buttonTwelve data-venue-name="' + response[11].venue.name + '" data-venue-city="' + response[11].venue.city + '" data-venue-time="' + response[11].datetime + '" class="venue-btn">' + cityDateTimeTwelve);
 
 
     });//AJAX END
