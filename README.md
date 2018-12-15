@@ -1,4 +1,4 @@
-# Beers Bands
+# Beers and Bands
 
 This app lets you search for a musical artist, click on a venue, and find the nearest bar closest to that location.
 
