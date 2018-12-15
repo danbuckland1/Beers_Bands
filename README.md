@@ -1,4 +1,4 @@
-# Beers_Bands
+# Beers Bands
 
 This app lets you search for a musical artist, click on a venue, and find the nearest bar closest to that location.
 
@@ -18,3 +18,8 @@ https://danbuckland1.github.io/Beers_Bands/
 
 
 <img width="1440" alt="bb modal" src="https://user-images.githubusercontent.com/36943035/50048309-bf888380-0096-11e9-9bfc-89cf80cbfbc8.png">
+
+
+## Contributor
+
+Dan Buckland
